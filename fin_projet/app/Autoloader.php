@@ -5,7 +5,7 @@ use Core\Controller\Controller;
 
 /**
 * Class Autoloader
-* Dynamic load of a class
+* Permet de charger dynamiquement une class
 */
 class Autoloader
 {
@@ -20,7 +20,7 @@ class Autoloader
 
     /**
     * Includes the file in the class
-    * @param string $class Name of the class to load
+    * @param string $class Nom de la class à charger
     */
     static function autoload($class)
     {

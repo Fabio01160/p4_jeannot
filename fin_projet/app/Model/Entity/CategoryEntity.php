@@ -5,6 +5,8 @@ use Core\Entity\Entity;
 
 /**
  * Class CategoryEntity
+ * Model used to 
+ * Modèle stockant les résultats des methodes et gérant les accesseurs pour les attributs spéciaux des categories
  */
 class CategoryEntity extends Entity
 {

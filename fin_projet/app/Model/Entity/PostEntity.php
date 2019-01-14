@@ -5,6 +5,7 @@ use Core\Entity\Entity;
 
 /**
  * Class PostEntity
+ * Modèle stockant les résultats des methodes et gérant les accesseurs pour les attributs spéciaux des posts
  */
 class PostEntity extends Entity
 {

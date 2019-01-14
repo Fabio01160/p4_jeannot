@@ -5,6 +5,7 @@
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="style.css" href="deco.css">
 	<meta charset="utf-8"/>
+	<meta name="description" content="Jean Forteroche publie son prochain livre en ligne !" />
 
 </head>
 <body>

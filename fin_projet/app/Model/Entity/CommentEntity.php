@@ -5,6 +5,7 @@ use Core\Entity\Entity;
 
 /**
  * Class CommentEntity
+ * Modèle stockant les résultats des methodes et gérant les accesseurs pour les attributs spéciaux des comments
  */
 class CommentEntity extends Entity
 {

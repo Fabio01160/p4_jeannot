@@ -48,7 +48,7 @@ class PostsController extends AppController
     }
 
     /**
-     * Edit a post
+     * Delete a post
      * @param string $succes
      */
     public function edit()

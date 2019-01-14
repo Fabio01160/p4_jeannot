@@ -9,12 +9,6 @@ body {
   font-size: 28px;
 }
 
-.littleDays
-{
-  font-family: 'Little Days Alt', arial;
-  font-size: 1.5em;
-}
-
 .jumbotron
 {
   background : url('../img/passport.jpg') center no-repeat;
@@ -39,9 +33,10 @@ body {
 
 .pageTitle
 {
+  color : #00838f;
+  font-family: Impact, sans-serif;
   font-size: 2em;
   margin-bottom: 1vw;
-  font-family: 'Avenir', sans-serif;
 }
 
 ol, ul {
@@ -61,15 +56,6 @@ a:link, a:visited, a:hover, a:active {
   color: #0056b3;
 }
 
-/*.center {
-  text-align: center;
-}*/
-
-#who-title {
-  font-size: 3em;
-  margin-bottom: 50px;
-}
-
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -77,15 +63,17 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .justify-end {
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
+  font-size: 0.8em;
   justify-content: flex-end;
+  -ms-flex-pack: end;
+  -webkit-box-pack: end;
 }
 
 .justify-space-between {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
+  font-size: 0.8em;
   justify-content: space-between;
+  -ms-flex-pack: justify;
+  -webkit-box-pack: justify;
 }
 
 .container
@@ -93,14 +81,25 @@ a:link, a:visited, a:hover, a:active {
   background-color: #f8f7f3;;
 }
 
-/*#header-perso {
-  font-size: 18px;
-}*/
 
 .chapitre {
+  text-align: left;
+  /*color : #265189;*/
   font-family: 'Avenir', serif;
   font-weight: bold;
-  color : #265189;
+  font-size: 0.8em;
+}
+
+.commentTitle
+{
+  color: #265189;
+  font-size: 2em;
+}
+
+.commentContent {
+  text-align: center;
+  font-family: 'Avenir', serif;
+  font-size: 0.8em;
 }
 
 .last-posts {

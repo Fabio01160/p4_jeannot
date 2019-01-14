@@ -23,7 +23,7 @@ if (isset($_GET['state'])) {
       } elseif (!isset($next)) {
           $links = '<div class="flex navPost justify-space-between"><div class="flex prevPost"><a href="?p=posts.show&id=' . htmlspecialchars($previous->id) . '"><i class="fas fa-arrow-left"></i> ' . htmlspecialchars($previous->title) . '</a></div></div>';
       } else {
-          $links = '<div class="flex navPost justify-space-between"><div class="flex prevPost"><a href="?p=posts.show&id=' . htmlspecialchars($previous->id) . '"><i class="fas fa-arrow-left"></i> ' . htmlspecialchars($previous->title) . '</a></div> <div class="flex nextPost"><a href="?p=posts.show&id=' . htmlspecialchars($next->id) . '">' . htmlspecialchars($next->title) . ' <i class="fas fa-arrow-right"></i></a></div></div>';
+          $links = '<div class="flex navPost justify-space-between"><div class=""><a href="?p=posts.show&id=' . htmlspecialchars($previous->id) . '"><i class="fas fa-arrow-left"></i> ' . htmlspecialchars($previous->title) . '</a></div> <div class="flex nextPost"><a href="?p=posts.show&id=' . htmlspecialchars($next->id) . '">' . htmlspecialchars($next->title) . ' <i class="fas fa-arrow-right"></i></a></div></div>';
     }
     echo $links;
   }
@@ -41,11 +41,12 @@ if (isset($_GET['state'])) {
     <a class="btn btn-warning back-btn" href="?p=admin.posts.index"><i class="fas fa-cog"></i> Administration</a>
 <?php endif; ?>
 
-<h2>Commentaires <i class="fas fa-comment"></i></h2>
+<h2 class="commentTitle">Commentaires</h2>
+<br>
 <ul>
 <?php foreach($comments as $comment): ?>
     <li>
-        <p><em><?= htmlspecialchars($comment->pseudo); ?></em> <i class="fas fa-user"></i> - <?= htmlspecialchars($comment->date); ?>
+        <p><em><i class="fas fa-user"></i> <?= htmlspecialchars($comment->pseudo); ?></em> le <?= htmlspecialchars($comment->date); ?>
         <?php
         if (isset($_SESSION['report'])) {
             if (count($_SESSION['report']) < 3) {
@@ -61,13 +62,15 @@ if (isset($_GET['state'])) {
             echo '<span class="report"><a href="?p=posts.reportComment&id=' . htmlspecialchars($comment->id) . '&post_id=' . htmlspecialchars($article->id) . '">Signaler <i class="fas fa-exclamation-circle"></i></a></span></p>';
         }
 
-         ?>
-        <p><?= htmlspecialchars($comment->content); ?></p>
+        ?>
+        <p class="commentContent"><?= htmlspecialchars($comment->content); ?></p>
     </li>
+    <br>
 <?php endforeach; ?>
 </ul>
+
+<h2 class="commentTitle">Je poste un commentaire ! </h2>
 <br>
-<h4>Poster un commentaire</h4>
 <div class="offset-md-2 col-md-8">
 <form action="?p=posts.addComment&id=<?= htmlspecialchars($article->id); ?>" method="post">
     <?= $form->input('pseudo', 'Pseudo'); ?>

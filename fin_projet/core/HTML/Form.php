@@ -14,7 +14,7 @@ class Form
     protected $data;
 
     /**
-    * @var string Tag used to surround the fields
+    * @var string Tag utilisé pour entourer les champs
     */
     public $surround = 'p';
 
