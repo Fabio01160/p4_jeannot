@@ -105,6 +105,8 @@ class PostsController extends AppController
      */
     public function show()
     {
+        $posts = $this->Post->last();
+        $categories = $this->Category->getAll();
         $article = $this->Post->findWithCategory($_GET['id']);
         if ($article === false) {
             $this->notFound();
@@ -118,13 +120,13 @@ class PostsController extends AppController
         $links;
         $form = new BootstrapForm($_POST);
         if (!$previous && !$next) {
-            $this->render('posts.show', compact('article', 'comments', 'form'));
+            $this->render('posts.show', compact('article', 'comments', 'form','posts','categories'));
         } elseif (!$previous) {
-            $this->render('posts.show', compact('article', 'comments', 'next', 'links', 'form'));
+            $this->render('posts.show', compact('article', 'comments', 'next', 'links', 'form','posts','categories'));
         } elseif (!$next) {
-            $this->render('posts.show', compact('article', 'comments', 'previous', 'links', 'form'));
+            $this->render('posts.show', compact('article', 'comments', 'previous', 'links', 'form','posts','categories'));
         } else {
-            $this->render('posts.show', compact('article', 'comments', 'previous', 'next', 'links', 'form'));
+            $this->render('posts.show', compact('article', 'comments', 'previous', 'next', 'links', 'form','posts','categories'));
         }
     }
 }
