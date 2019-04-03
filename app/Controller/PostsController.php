@@ -33,6 +33,7 @@ class PostsController extends AppController
      */
     public function category()
     {
+        $posts = $this->Post->getAll();
         $category = $this->Category->find($_GET['id']);
         if ($category === false) {
             $this->notFound();
@@ -42,7 +43,7 @@ class PostsController extends AppController
             $this->notFound();
         }
         $categories = $this->Category->getAll();
-        $this->render('posts.category', compact('articles', 'categories', 'category'));
+        $this->render('posts.category', compact('articles', 'posts', 'categories', 'category'));
     }
 
     /**
@@ -50,11 +51,12 @@ class PostsController extends AppController
      */
     public function comment()
     {
+        $posts = $this->Post->getAll();
         $comment = $this->Comment->find($_GET['id']);
         if ($comment === false) {
             $this->notFound();
         }
-        $this->render('posts.comment', compact('comment'));
+        $this->render('posts.comment', compact('comment', 'posts'));
     }
 
     /**
