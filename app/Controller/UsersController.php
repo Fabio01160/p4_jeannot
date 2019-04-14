@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Controller;
-
 use Core\HTML\BootstrapForm;
 use Core\Auth\DBAuth;
 use \App;
+
 
 /**
  * Class UsersController
@@ -15,8 +15,18 @@ class UsersController extends AppController
     /**
      * User connexion
      */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->loadModel('Post');
+        $this->loadModel('Category');
+        $this->loadModel('Comment');
+    }
+
     public function login()
     {
+        $posts = $this->Post->last();
+        $categories = $this->Category->getAll();
         $errors = false;
         if (!empty($_POST)) {
             $auth = new DBAuth(App::getInstance()->getDb());
@@ -28,6 +38,6 @@ class UsersController extends AppController
         }
 
         $form = new BootstrapForm($_POST);
-        $this->render('users.login', compact('form', 'errors'));
+        $this->render('users.login', compact('form', 'errors','categories', 'posts'));
     }
 }

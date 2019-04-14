@@ -3,7 +3,7 @@ namespace Core;
 
 /**
 * Class Autoloader
-* Dynamic load,of a class
+* Dynamic load of a class
 */
 class Autoloader
 {
